@@ -484,6 +484,82 @@ footer {
   line-height: 1.6;
 }
 
+/* ── Candy Rain Animation ── */
+@keyframes candyFall {
+  0%   { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+  5%   { opacity: 0.55; }
+  90%  { opacity: 0.45; }
+  100% { transform: translateY(110vh) rotate(540deg); opacity: 0; }
+}
+
+@keyframes candySway {
+  0%, 100% { margin-left: 0; }
+  25%       { margin-left: 18px; }
+  75%       { margin-left: -18px; }
+}
+
+.candy-rain {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.candy-drop {
+  position: absolute;
+  top: -80px;
+  font-size: 1.6rem;
+  line-height: 1;
+  animation: candyFall linear infinite, candySway ease-in-out infinite;
+  user-select: none;
+  will-change: transform;
+}
+
+/* ── Gameplay GIF / Screenshot Container ── */
+.gameplay-preview {
+  border-radius: var(--radius);
+  border: 1px solid var(--gold-dim);
+  box-shadow: 0 0 40px rgba(212,175,55,0.18), 0 0 80px rgba(233,30,140,0.08);
+  overflow: hidden;
+  width: 100%;
+  display: block;
+}
+
+.gameplay-preview img,
+.gameplay-preview video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gif-placeholder {
+  width: 100%;
+  min-height: 320px;
+  background: linear-gradient(135deg, #0e0820, #1a0730, #0d1520);
+  border-radius: var(--radius);
+  border: 2px dashed var(--gold-dim);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.gif-placeholder .gif-icon { font-size: 3rem; opacity: 0.6; }
+
+/* ── Gold Glow Pulse (CTAs) ── */
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+  50%       { box-shadow: 0 0 20px 4px rgba(212,175,55,0.25); }
+}
+.btn-gold { animation: goldPulse 3s ease-in-out infinite; }
+.btn-gold:hover { animation: none; }
+
 /* ── Utility ── */
 .text-gold  { color: var(--gold); }
 .text-muted { color: var(--text-muted); }
