@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Bonanza Statistics — RTP, Hit Frequency & Variance Data | sweetbonanza.casino</title>
+  <meta name="description" content="Sweet Bonanza statistics: 96.49% RTP, ~50% hit frequency, bonus trigger rate, expected session data, variance analysis, and Buy Feature vs base game stats.">
+  <link rel="canonical" href="https://sweetbonanza.casino/statistics/">
+  <meta property="og:title" content="Sweet Bonanza Statistics — RTP, Hit Frequency & Variance Data">
+  <meta property="og:description" content="Full Sweet Bonanza statistical breakdown: RTP by mode, hit frequency, bonus trigger rate, variance analysis, and mathematical expectations.">
+  <meta property="og:url" content="https://sweetbonanza.casino/statistics/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/css/main.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRBCBCY45L"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LRBCBCY45L');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://sweetbonanza.casino/"},
+    {"@type":"ListItem","position":2,"name":"Statistics","item":"https://sweetbonanza.casino/statistics/"}
+  ]}</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What is the hit frequency of Sweet Bonanza?","acceptedAnswer":{"@type":"Answer","text":"Sweet Bonanza has a base game hit frequency of approximately 1 in 2 spins (~50%). Many wins are small relative to stake, with the largest returns coming from the Free Spins bonus."}},
+    {"@type":"Question","name":"How often does the Sweet Bonanza bonus trigger?","acceptedAnswer":{"@type":"Answer","text":"The Free Spins bonus triggers approximately once every 250–300 base game spins. With Ante Bet active, the frequency roughly doubles to around 1 in 125–150 spins."}},
+    {"@type":"Question","name":"What percentage of Sweet Bonanza's return comes from Free Spins?","acceptedAnswer":{"@type":"Answer","text":"Approximately 70–75% of Sweet Bonanza's total RTP is derived from the Free Spins bonus round. The base game contributes the remaining 25–30% of returns."}},
+    {"@type":"Question","name":"What is the standard deviation of Sweet Bonanza?","acceptedAnswer":{"@type":"Answer","text":"Despite medium volatility and a ~50% hit rate, Sweet Bonanza has meaningful standard deviation because 70-75% of its RTP derives from the bonus round. Short sessions (under 500 spins) can still produce results wildly different from the theoretical 96.49% RTP."}},
+    {"@type":"Question","name":"What bankroll do you need for Sweet Bonanza?","acceptedAnswer":{"@type":"Answer","text":"For standard play at minimum bet ($0.20), a bankroll of at least 200–300× your bet is recommended to withstand variance and reach the bonus with reasonable probability. For the Buy Feature, you need at least 100× bet per purchase plus reserves."}}
+  ]}</script>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><polygon points="11,2 20,19 2,19" fill="none" stroke="#d4af37" stroke-width="2" stroke-linejoin="round"/></svg>
+    sweetbonanza.casino
+  </a>
+  <div class="nav-links">
+    <a href="/">Home</a><a href="/demo/">Demo</a><a href="/sweet-bonanza-review/">Review</a>
+    <a href="/paytable/">Paytable</a><a href="/statistics/">Statistics</a>
+    <a href="/tips-tricks/">Tips</a><a href="/blog/">Blog</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://slotessentials.com/" class="nav-se">🎰 SlotEssentials</a>
+    <a href="/demo/" class="nav-demo">🎮 Play Demo</a>
+    <a href="https://roobet.com/?ref=elite" class="nav-cta" target="_blank" rel="noopener">💰 Play Real</a>
+  </div>
+</nav>
+<div class="side-banner">
+  <span class="side-icon">💰</span>
+  <a href="https://roobet.com/?ref=elite" target="_blank" rel="noopener">Play<br>Real<br>Money</a>
+  <div class="side-divider"></div>
+  <span class="side-icon">🎮</span>
+  <a href="/demo/">Free<br>Demo</a>
+</div>
+
+<div class="page-header">
+  <div class="breadcrumb"><a href="/">Home</a><span>›</span>Statistics</div>
+  <h1>Sweet Bonanza <span class="text-gold">Statistics</span></h1>
+  <p class="text-muted" style="margin-top:0.5rem;">RTP breakdowns, hit frequency, bonus trigger rates, and mathematical expectations.</p>
+</div>
+
+<div class="two-col">
+  <div>
+    <div class="section" style="padding:0 0 2rem;">
+
+      <h2 class="section-title">Core Statistics</h2>
+      <div class="stats-bar" style="margin-bottom:2rem;">
+        <div class="stat-item"><div class="stat-label">Default RTP</div><div class="stat-value">96.49%</div></div>
+        <div class="stat-item"><div class="stat-label">Hit Freq.</div><div class="stat-value">~50%</div></div>
+        <div class="stat-item"><div class="stat-label">Volatility</div><div class="stat-value">Medium</div></div>
+        <div class="stat-item"><div class="stat-label">Max Win</div><div class="stat-value">21,175×</div></div>
+      </div>
+
+      <h2 class="section-title">RTP by Game Mode</h2>
+      <table class="data-table">
+        <thead><tr><th>Mode</th><th>RTP</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Standard Play</td><td class="text-gold">96.49%</td><td>Default mode, no Ante Bet</td></tr>
+          <tr><td>Ante Bet Active</td><td>96.21%</td><td>+25% stake, ~2× scatter frequency</td></tr>
+          <tr><td>Buy Feature</td><td>94.03%</td><td>100× stake for instant Free Spins</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:0.75rem; font-size:0.88rem; color:var(--text-muted);">The Buy Feature carries a 2.45% RTP penalty versus standard play. While it removes the wait for scatters, you are paying a mathematical premium for that convenience.</p>
+
+      <h2 class="section-title" style="margin-top:2rem;">Bonus Trigger Statistics</h2>
+      <table class="data-table">
+        <thead><tr><th>Metric</th><th>Standard</th><th>Ante Bet</th></tr></thead>
+        <tbody>
+          <tr><td>Average spins between bonuses</td><td>250–300</td><td>125–150</td></tr>
+          <tr><td>Scatters needed to trigger</td><td>4+</td><td>4+</td></tr>
+          <tr><td>Free spins awarded</td><td>10</td><td>10</td></tr>
+          <tr><td>Retrigger possible?</td><td>Yes (+5 spins)</td><td>Yes (+5 spins)</td></tr>
+          <tr><td>Approx. % of RTP from bonus</td><td class="text-gold">~72%</td><td class="text-gold">~72%</td></tr>
+        </tbody>
+      </table>
+
+      <h2 class="section-title" style="margin-top:2rem;">Multiplier Bomb Distribution</h2>
+      <p>During Free Spins, multiplier bombs appear in place of candy sweet symbols. Approximate relative frequencies:</p>
+      <table class="data-table">
+        <thead><tr><th>Bomb Value</th><th>Relative Frequency</th><th>Contribution to Max Win</th></tr></thead>
+        <tbody>
+          <tr><td>2×</td><td>~38%</td><td>Low</td></tr>
+          <tr><td>5×</td><td>~28%</td><td>Low</td></tr>
+          <tr><td>10×</td><td>~18%</td><td>Moderate</td></tr>
+          <tr><td>25×</td><td>~10%</td><td>High</td></tr>
+          <tr><td>50×</td><td>~5%</td><td>Very high</td></tr>
+          <tr><td class="text-gold">100×</td><td class="text-gold">~1%</td><td class="text-gold">Maximum</td></tr>
+        </tbody>
+      </table>
+
+      <h2 class="section-title" style="margin-top:2rem;">Session Expectations</h2>
+      <table class="data-table">
+        <thead><tr><th>Session Length</th><th>Likely Bonuses</th><th>Expected Return</th></tr></thead>
+        <tbody>
+          <tr><td>100 spins</td><td>0–1</td><td>Highly variable</td></tr>
+          <tr><td>300 spins</td><td>1–2</td><td>~96.49% theoretical</td></tr>
+          <tr><td>1,000 spins</td><td>3–5</td><td>Closer to RTP</td></tr>
+          <tr><td>10,000+ spins</td><td>35–40</td><td>Near theoretical RTP</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:0.75rem; font-size:0.88rem; color:var(--text-muted);">Short sessions deviate significantly from theoretical RTP. The 96.49% figure becomes meaningful only over thousands of spins. In any single session, results are determined primarily by luck.</p>
+
+      <h2 class="section-title" style="margin-top:2rem;">Bankroll Recommendations</h2>
+      <table class="data-table">
+        <thead><tr><th>Play Style</th><th>Recommended Bankroll</th></tr></thead>
+        <tbody>
+          <tr><td>Standard (min bet $0.20)</td><td>$40–$60 (200–300 spins)</td></tr>
+          <tr><td>Ante Bet (min bet $0.25)</td><td>$30–$50 per session</td></tr>
+          <tr><td>Buy Feature ($20 per purchase)</td><td>$60–$100 for 3–5 buys</td></tr>
+          <tr><td>High roller ($5/spin)</td><td>$1,000–$1,500</td></tr>
+        </tbody>
+      </table>
+
+      <div class="faq-list" style="margin-top:2rem;">
+        <h2 class="section-title">Statistics FAQs</h2>
+        <div class="faq-item">
+          <div class="faq-q">What is the hit frequency of Sweet Bonanza?</div>
+          <div class="faq-a">Approximately <strong>1 in 2 spins (~50%)</strong> produces a win. Many wins are small relative to stake, but the hit frequency is high compared to most slots.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How often does the bonus trigger?</div>
+          <div class="faq-a">Approximately once every 250–300 spins in standard play. Ante Bet roughly halves this to 125–150 spins.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What % of RTP comes from Free Spins?</div>
+          <div class="faq-a">Approximately 70–75% of the total 96.49% RTP comes from the Free Spins bonus. The base game contributes the remaining 25–30%.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is the RTP 96.49% guaranteed in every session?</div>
+          <div class="faq-a">No. 96.49% is a theoretical long-run average across millions of spins. Short sessions can produce any result. Medium volatility means results vary from session to session, though swings are less extreme than high-volatility slots.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What bankroll do you need?</div>
+          <div class="faq-a">At minimum bet ($0.20), a bankroll of $40–$60 (200–300 spins) is recommended. For Buy Feature play, budget for 3–5 purchases plus reserve funds.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="card">
+      <h3>Key Numbers</h3>
+      <table style="width:100%; font-size:0.85rem; border-collapse:collapse;">
+        <tr><td style="padding:0.35rem 0; color:var(--text-muted); border-bottom:1px solid var(--border);">RTP (Standard)</td><td style="text-align:right; color:var(--gold); border-bottom:1px solid var(--border);">96.49%</td></tr>
+        <tr><td style="padding:0.35rem 0; color:var(--text-muted); border-bottom:1px solid var(--border);">RTP (Buy Feature)</td><td style="text-align:right; border-bottom:1px solid var(--border);">94.03%</td></tr>
+        <tr><td style="padding:0.35rem 0; color:var(--text-muted); border-bottom:1px solid var(--border);">Hit Frequency</td><td style="text-align:right; border-bottom:1px solid var(--border);">~50% (1 in 2)</td></tr>
+        <tr><td style="padding:0.35rem 0; color:var(--text-muted); border-bottom:1px solid var(--border);">Bonus Avg. Trigger</td><td style="text-align:right; border-bottom:1px solid var(--border);">1 in 275 spins</td></tr>
+        <tr><td style="padding:0.35rem 0; color:var(--text-muted);">Max Win</td><td style="text-align:right; color:var(--gold);">21,175×</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Related Pages</h3>
+      <ul style="list-style:none; padding:0; font-size:0.88rem;">
+        <li style="padding:0.4rem 0; border-bottom:1px solid var(--border);"><a href="/paytable/">🍒 Paytable</a></li>
+        <li style="padding:0.4rem 0; border-bottom:1px solid var(--border);"><a href="/tips-tricks/">💡 Tips & Tricks</a></li>
+        <li style="padding:0.4rem 0; border-bottom:1px solid var(--border);"><a href="/sweet-bonanza-review/">⭐ Review</a></li>
+        <li style="padding:0.4rem 0;"><a href="/blog/sweet-bonanza-rtp-explained/">📖 RTP Explained</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Home</a><a href="/demo/">Play Demo</a><a href="/sweet-bonanza-review/">Review</a>
+    <a href="/paytable/">Paytable</a><a href="/statistics/">Statistics</a>
+    <a href="/tips-tricks/">Tips & Tricks</a><a href="/blog/">Blog</a><a href="/about/">About</a>
+    <a href="https://slotessentials.com/" target="_blank" rel="noopener">SlotEssentials</a>
+  </div>
+  <p class="footer-disclaimer">sweetbonanza.casino is an independent information site. Statistics are based on publicly available game mathematics and player data. Gambling involves risk — play responsibly. 18+ only.</p>
+</footer>
+<script>document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));</script>
+</body>
+</html>
