@@ -10,7 +10,9 @@
   <meta property="og:description" content="Play the Sweet Bonanza free demo instantly. 96.49% RTP, 21,175x max win, medium volatility candy slot by Pragmatic Play.">
   <meta property="og:url" content="https://sweetbonanza.casino/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://sweetbonanza.casino/images/sweet-bonanza-og.jpg">
+  <meta property="og:image" content="https://sweetbonanza.casino/images/vs20fruitsw_1920x823_B.png">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="823">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -86,9 +88,13 @@
     }
     .nav-se:hover { background: #ea6a0a; color: #fff; }
 
+    .visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
     /* Hero */
     .hero {
-      background: linear-gradient(160deg, #0e0820 0%, #07070d 50%, #0d1a0a 100%);
+      background: linear-gradient(160deg, rgba(19,10,46,0.82) 0%, rgba(10,5,24,0.78) 40%, rgba(7,7,13,0.88) 100%),
+                  url('/images/vs20fruitsw_1920x823_B.png') center/cover no-repeat;
+      background-blend-mode: multiply;
       padding: 4rem 1.5rem 3rem;
       text-align: center;
       position: relative;
@@ -97,8 +103,40 @@
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(233,30,140,0.08), transparent);
+      background:
+        radial-gradient(ellipse 80% 55% at 50% 0%, rgba(233,30,140,0.13), transparent),
+        radial-gradient(ellipse 50% 40% at 15% 80%, rgba(212,175,55,0.08), transparent),
+        radial-gradient(ellipse 50% 40% at 85% 70%, rgba(100,60,200,0.07), transparent);
       pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(212,175,55,0.06)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* Candy Rain */
+    @keyframes candyFall {
+      0%   { transform: translateY(-80px) rotate(0deg); opacity: 0; }
+      6%   { opacity: 0.5; }
+      92%  { opacity: 0.4; }
+      100% { transform: translateY(110vh) rotate(540deg); opacity: 0; }
+    }
+    @keyframes candySway {
+      0%, 100% { margin-left: 0; }
+      33%       { margin-left: 20px; }
+      66%       { margin-left: -20px; }
+    }
+    .candy-rain {
+      position: absolute; inset: 0;
+      overflow: hidden; pointer-events: none; z-index: 0;
+    }
+    .candy-drop {
+      position: absolute; top: -80px;
+      font-size: 1.5rem; line-height: 1;
+      animation: candyFall linear infinite, candySway ease-in-out infinite;
+      user-select: none; will-change: transform;
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.4rem;
@@ -121,12 +159,17 @@
       display: flex; flex-wrap: wrap; gap: 0.75rem;
       justify-content: center; margin-bottom: 2.5rem;
     }
+    @keyframes goldPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+      50%       { box-shadow: 0 0 20px 4px rgba(212,175,55,0.28); }
+    }
     .btn-gold {
       display: inline-block; background: var(--gold); color: #000;
       font-weight: 700; padding: 0.85rem 2rem; border-radius: 8px;
       font-size: 1rem; transition: background 0.2s, transform 0.1s;
+      animation: goldPulse 3s ease-in-out infinite;
     }
-    .btn-gold:hover { background: var(--gold-light); color: #000; transform: translateY(-1px); }
+    .btn-gold:hover { background: var(--gold-light); color: #000; transform: translateY(-1px); animation: none; }
     .btn-outline {
       display: inline-block; border: 2px solid var(--gold); color: var(--gold);
       font-weight: 700; padding: 0.8rem 1.85rem; border-radius: 8px; font-size: 1rem;
@@ -323,12 +366,7 @@
 
 <!-- Navigation -->
 <nav>
-  <a href="/" class="nav-logo">
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="11,2 20,19 2,19" fill="none" stroke="#d4af37" stroke-width="2" stroke-linejoin="round"/>
-    </svg>
-    sweetbonanza.casino
-  </a>
+  <a href="/" class="nav-logo"><img src="/images/sweet-bonanza-logo.png" alt="Sweet Bonanza" width="180" height="32" style="height:32px;width:auto;"></a>
   <div class="nav-links">
     <a href="/">Home</a>
     <a href="/demo/">Demo</a>
@@ -359,8 +397,28 @@
 
 <!-- Hero -->
 <section class="hero">
+  <!-- Falling candy rain (decorative) -->
+  <div class="candy-rain" aria-hidden="true">
+    <span class="candy-drop" style="left:4%;  animation-duration:11s,8s; animation-delay:-2s,-1s;">🍭</span>
+    <span class="candy-drop" style="left:11%; animation-duration:14s,11s; animation-delay:-7s,-4s;">🍎</span>
+    <span class="candy-drop" style="left:19%; animation-duration:9s,7s;  animation-delay:-1s,-3s;">🍇</span>
+    <span class="candy-drop" style="left:27%; animation-duration:13s,9s; animation-delay:-5s,-6s;">❤️</span>
+    <span class="candy-drop" style="left:35%; animation-duration:10s,12s;animation-delay:-9s,-2s;">🍌</span>
+    <span class="candy-drop" style="left:43%; animation-duration:15s,8s; animation-delay:-3s,-8s;">🍉</span>
+    <span class="candy-drop" style="left:52%; animation-duration:12s,10s;animation-delay:-6s,-5s;">🍭</span>
+    <span class="candy-drop" style="left:60%; animation-duration:8s,13s; animation-delay:-11s,-1s;">🍑</span>
+    <span class="candy-drop" style="left:68%; animation-duration:16s,9s; animation-delay:-4s,-7s;">🍎</span>
+    <span class="candy-drop" style="left:76%; animation-duration:11s,7s; animation-delay:-8s,-3s;">💣</span>
+    <span class="candy-drop" style="left:84%; animation-duration:9s,11s; animation-delay:-2s,-9s;">🍇</span>
+    <span class="candy-drop" style="left:92%; animation-duration:13s,8s; animation-delay:-6s,-4s;">❤️</span>
+  </div>
+
   <div class="hero-badge">🍭 Pragmatic Play · 2019</div>
-  <h1>Sweet <span>Bonanza</span></h1>
+  <img src="/images/sweet-bonanza-logo.png"
+       alt="Sweet Bonanza logo"
+       width="1800" height="324"
+       style="max-width:480px; width:90%; height:auto; margin:0 auto 0.5rem; display:block; filter:drop-shadow(0 4px 24px rgba(233,30,140,0.4));">
+  <h1 class="visually-hidden">Sweet Bonanza</h1>
   <p class="hero-sub">The ultimate resource for Sweet Bonanza — free demo, 96.49% RTP, 21,175x max win, and everything you need to know about the world's most popular candy slot.</p>
   <div class="hero-actions">
     <a href="/demo/" class="btn-gold">🎮 Play Free Demo</a>
@@ -375,6 +433,30 @@
   </div>
 </section>
 
+<!-- Gameplay Preview -->
+<section class="section" style="padding-top:0;">
+  <h2 class="section-title">Gameplay Preview</h2>
+  <div style="display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; justify-content:center;">
+    <!-- Animated game tile (left) -->
+    <img src="/images/Sweet Bonanza_Game Tile_300x300_Animated_5.gif"
+         alt="Sweet Bonanza animated game tile"
+         width="120" height="120"
+         style="border-radius:16px; box-shadow:0 0 24px rgba(233,30,140,0.25); flex-shrink:0;">
+    <!-- Main gameplay GIF - portrait so constrain height -->
+    <div class="gameplay-preview" style="flex:1; min-width:260px; max-width:560px;">
+      <img src="/images/gameplay.gif"
+           alt="Sweet Bonanza gameplay — tumble mechanic and multiplier bombs during free spins"
+           width="1080" height="1920"
+           style="width:100%; max-height:480px; object-fit:cover; object-position:top; display:block; border-radius:var(--radius);">
+    </div>
+    <!-- Animated game tile (right) -->
+    <img src="/images/Sweet Bonanza_Game Tile_300x300_Animated_10.gif"
+         alt="Sweet Bonanza animated game tile"
+         width="120" height="120"
+         style="border-radius:16px; box-shadow:0 0 24px rgba(212,175,55,0.25); flex-shrink:0;">
+  </div>
+</section>
+
 <!-- About the Game -->
 <section class="section">
   <h2 class="section-title">About Sweet Bonanza</h2>
@@ -386,6 +468,11 @@
       <a href="/sweet-bonanza-review/" style="color:var(--gold); font-weight:600;">Read full review →</a>
     </div>
     <div>
+      <!-- Game overview screenshot -->
+      <img src="/images/game-overview.png"
+           alt="Sweet Bonanza 6×5 game grid showing all fruit and candy symbols"
+           width="1023" height="575"
+           style="width:100%; border-radius:var(--radius); box-shadow:0 0 32px rgba(233,30,140,0.15); margin-bottom:1rem;">
       <div class="card">
         <h3>Quick Facts</h3>
         <table style="width:100%; font-size:0.88rem; border-collapse:collapse;">
