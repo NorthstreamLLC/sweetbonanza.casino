@@ -59,34 +59,50 @@
     nav {
       position: sticky; top: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 1.5rem; height: 60px;
-      background: rgba(7,7,13,0.96); backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
+      padding: 0 1.75rem; height: 62px; gap: 1rem;
+      background: rgba(7,7,13,0.82);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(212,175,55,0.10);
     }
     .nav-logo {
-      display: flex; align-items: center; gap: 0.5rem;
+      display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;
       font-size: 1.05rem; font-weight: 700; color: var(--gold);
     }
-    .nav-links { display: flex; gap: 1.2rem; }
-    .nav-links a { color: var(--text-muted); font-size: 0.85rem; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-right { display: flex; gap: 0.5rem; align-items: center; }
+    .nav-links { display: flex; align-items: center; gap: 0.2rem; }
+    .nav-links a {
+      color: var(--text-muted); font-size: 0.82rem; font-weight: 500;
+      padding: 0.3rem 0.65rem; border-radius: 8px;
+      transition: color 0.18s, background 0.18s; white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.07); }
+    .nav-links a.nav-sb1000 {
+      color: var(--pink) !important; font-weight: 600;
+      border: 1px solid rgba(233,30,140,0.35);
+      background: rgba(233,30,140,0.06);
+    }
+    .nav-links a.nav-sb1000:hover {
+      background: rgba(233,30,140,0.15) !important; border-color: var(--pink);
+    }
+    .nav-right { display: flex; gap: 0.45rem; align-items: center; flex-shrink: 0; }
     .nav-cta {
-      background: var(--gold); color: #000; padding: 0.35rem 0.85rem;
-      border-radius: 6px; font-size: 0.82rem; font-weight: 700;
+      background: var(--gold); color: #000; padding: 0.38rem 0.9rem;
+      border-radius: 8px; font-size: 0.8rem; font-weight: 700;
+      transition: background 0.18s, transform 0.1s;
     }
-    .nav-cta:hover { background: var(--gold-light); color: #000; }
+    .nav-cta:hover { background: var(--gold-light); color: #000; transform: translateY(-1px); }
     .nav-demo {
-      border: 1.5px solid var(--gold); color: var(--gold);
-      padding: 0.35rem 0.85rem; border-radius: 6px;
-      font-size: 0.82rem; font-weight: 700; transition: all 0.2s;
+      border: 1.5px solid rgba(212,175,55,0.55); color: var(--gold);
+      padding: 0.38rem 0.9rem; border-radius: 8px;
+      font-size: 0.8rem; font-weight: 700; transition: all 0.18s;
     }
-    .nav-demo:hover { background: var(--gold); color: #000; }
+    .nav-demo:hover { background: var(--gold); color: #000; border-color: var(--gold); }
     .nav-se {
-      background: #f97316; color: #fff; padding: 0.35rem 0.85rem;
-      border-radius: 6px; font-size: 0.82rem; font-weight: 700;
+      background: rgba(249,115,22,0.12); color: #f97316;
+      border: 1px solid rgba(249,115,22,0.3);
+      padding: 0.38rem 0.9rem; border-radius: 8px;
+      font-size: 0.8rem; font-weight: 700; transition: all 0.18s;
     }
-    .nav-se:hover { background: #ea6a0a; color: #fff; }
+    .nav-se:hover { background: #f97316; color: #fff; border-color: #f97316; }
 
     .visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
@@ -375,7 +391,7 @@
     <a href="/statistics/">Statistics</a>
     <a href="/tips-tricks/">Tips</a>
     <a href="/blog/">Blog</a>
-    <a href="/sweet-bonanza-1000/" style="color:var(--pink);font-weight:600;">⚡ SB1000</a>
+    <a href="/sweet-bonanza-1000/" class="nav-sb1000">Sweet Bonanza 1000</a>
   </div>
   <div class="nav-right">
     <a href="https://slotessentials.com/" class="nav-se">🎰 SlotEssentials</a>
