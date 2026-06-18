@@ -10,7 +10,7 @@
   <meta property="og:description" content="The supercharged sequel to Sweet Bonanza. 96.53% RTP, 25,000x max win, 1,000x multiplier bombs. Play free demo instantly.">
   <meta property="og:url" content="https://sweetbonanza.casino/sweet-bonanza-1000/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://sweetbonanza.casino/images/vs20fruitsw_1920x823_B.png">
+  <meta property="og:image" content="https://sweetbonanza.casino/images/sb1000-hero-bg.jpg">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -41,12 +41,67 @@
     {"@type":"Question","name":"What is the difference between Sweet Bonanza and Sweet Bonanza 1000?","acceptedAnswer":{"@type":"Answer","text":"The main differences: Sweet Bonanza 1000 has very high volatility (original is medium), 1,000x max multiplier bombs (original caps at 100x), a 25,000x max win (original is 21,175x), and a slightly higher RTP of 96.53% vs 96.49%."}}
   ]}</script>
 </head>
+<style>
+  /* ── SB1000 bomb rain ── */
+  @keyframes bombFall {
+    0%   { transform: translateY(-80px) rotate(-15deg) scale(0.8); opacity: 0; }
+    8%   { opacity: 1; }
+    90%  { opacity: 0.7; }
+    100% { transform: translateY(110vh) rotate(25deg) scale(1.1); opacity: 0; }
+  }
+  @keyframes bombSway {
+    0%,100% { margin-left: 0; }
+    33%     { margin-left: 18px; }
+    66%     { margin-left: -14px; }
+  }
+  .bomb-rain {
+    position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1;
+  }
+  .bomb-drop {
+    position: absolute;
+    top: -80px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--pink);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 12px rgba(233,30,140,0.7), 0 0 24px rgba(233,30,140,0.3);
+    animation: bombFall linear infinite, bombSway ease-in-out infinite;
+    user-select: none;
+  }
+  /* SB1000 hero */
+  .sb1000-hero {
+    position: relative;
+    background:
+      linear-gradient(160deg, rgba(20,3,3,0.78) 0%, rgba(8,2,22,0.72) 45%, rgba(7,7,13,0.88) 100%),
+      url('/images/sb1000-hero-bg.jpg') center 30%/cover no-repeat;
+    background-blend-mode: multiply;
+    border-bottom: 1px solid rgba(233,30,140,0.25);
+    overflow: hidden;
+  }
+  .sb1000-hero .page-header-inner {
+    position: relative; z-index: 2;
+    padding: 3rem 1.5rem 2.5rem;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  /* Bomb sidebar glow */
+  .bomb-sidebar-img {
+    width: 100%; max-width: 220px; margin: 0 auto; display: block;
+    filter: drop-shadow(0 0 18px rgba(233,30,140,0.55)) drop-shadow(0 0 40px rgba(212,175,55,0.25));
+    transition: filter 0.3s;
+  }
+  .bomb-sidebar-img:hover {
+    filter: drop-shadow(0 0 28px rgba(233,30,140,0.85)) drop-shadow(0 0 60px rgba(212,175,55,0.4));
+  }
+</style>
+
 <body>
 <nav>
-  <a href="/" class="nav-logo"><img src="/images/sweet-bonanza-logo.png" alt="Sweet Bonanza" width="180" height="32" style="height:32px;width:auto;"></a>
+  <a href="/sweet-bonanza-1000/" class="nav-logo"><img src="/images/sb1000-logo.png" alt="Sweet Bonanza 1000" width="180" height="39" style="height:36px;width:auto;"></a>
   <div class="nav-links">
     <a href="/">Classic</a>
-    <a href="/sweet-bonanza-1000/" class="active">SB 1000</a>
+    <a href="/sweet-bonanza-1000/" class="active">Sweet Bonanza 1000</a>
     <a href="/sweet-bonanza-1000/demo/">Demo</a>
     <a href="/sweet-bonanza-1000/review/">Review</a>
     <a href="/blog/sweet-bonanza-vs-sweet-bonanza-1000/">SB vs SB1000</a>
@@ -67,15 +122,36 @@
   <a href="/sweet-bonanza-1000/demo/">Free<br>Demo</a>
 </div>
 
-<div class="page-header" style="background:linear-gradient(160deg,#1a0a0a 0%,#0d0520 50%,#07070d 100%); border-bottom:1px solid rgba(233,30,140,0.2);">
-  <div class="breadcrumb"><a href="/">Home</a><span>›</span>Sweet Bonanza 1000</div>
-  <div style="font-size:0.78rem; color:var(--pink); text-transform:uppercase; letter-spacing:0.08em; font-weight:700; margin-bottom:0.5rem;">⚡ THE SUPERCHARGED SEQUEL</div>
-  <h1>Sweet Bonanza <span class="text-gold">1000</span></h1>
-  <p class="text-muted" style="margin-top:0.5rem; max-width:600px;">Same candy world. 1,000× the madness. Pragmatic Play's high-voltage upgrade delivers 25,000× max win potential and multiplier bombs that go 10× further than the original.</p>
-  <div style="display:flex; gap:0.75rem; margin-top:1.5rem; flex-wrap:wrap;">
-    <a href="/sweet-bonanza-1000/demo/" class="btn-gold">🎮 Play Free Demo</a>
-    <a href="https://roobet.com/?ref=elite" class="btn-outline" target="_blank" rel="noopener">💰 Play Real Money</a>
-    <a href="/sweet-bonanza-1000/review/" class="btn-outline">⭐ Full Review</a>
+<div class="sb1000-hero">
+  <!-- 1000× bomb rain -->
+  <div class="bomb-rain" aria-hidden="true">
+    <span class="bomb-drop" style="left:4%;  animation-duration:6.8s,3.2s; animation-delay:0s,0s;">💣 1000×</span>
+    <span class="bomb-drop" style="left:11%; animation-duration:7.4s,4.1s; animation-delay:0.9s,1.1s;">⚡ 1000×</span>
+    <span class="bomb-drop" style="left:18%; animation-duration:5.9s,2.8s; animation-delay:2.2s,0.5s;">💣 1000×</span>
+    <span class="bomb-drop" style="left:26%; animation-duration:8.1s,3.7s; animation-delay:0.4s,2.0s;">⚡ 1000×</span>
+    <span class="bomb-drop" style="left:34%; animation-duration:6.3s,4.4s; animation-delay:3.1s,0.3s;">💣 1000×</span>
+    <span class="bomb-drop" style="left:42%; animation-duration:7.7s,2.9s; animation-delay:1.5s,1.8s;">⚡ 1000×</span>
+    <span class="bomb-drop" style="left:50%; animation-duration:5.5s,3.5s; animation-delay:4.0s,0.7s;">💣 1000×</span>
+    <span class="bomb-drop" style="left:58%; animation-duration:8.4s,4.8s; animation-delay:0.7s,2.4s;">⚡ 1000×</span>
+    <span class="bomb-drop" style="left:66%; animation-duration:6.6s,3.1s; animation-delay:2.8s,1.3s;">💣 1000×</span>
+    <span class="bomb-drop" style="left:74%; animation-duration:7.2s,2.6s; animation-delay:1.1s,0.9s;">⚡ 1000×</span>
+    <span class="bomb-drop" style="left:82%; animation-duration:5.8s,4.2s; animation-delay:3.5s,1.6s;">💣 1000×</span>
+    <span class="bomb-drop" style="left:90%; animation-duration:8.0s,3.9s; animation-delay:0.2s,2.8s;">⚡ 1000×</span>
+  </div>
+
+  <div class="page-header-inner">
+    <div class="breadcrumb"><a href="/">Home</a><span>›</span>Sweet Bonanza 1000</div>
+    <div style="font-size:0.78rem; color:var(--pink); text-transform:uppercase; letter-spacing:0.08em; font-weight:700; margin-bottom:1rem;">⚡ THE SUPERCHARGED SEQUEL</div>
+    <h1 class="visually-hidden">Sweet Bonanza 1000</h1>
+    <img src="/images/sb1000-logo.png" alt="Sweet Bonanza 1000" width="1800" height="387"
+         style="max-width:460px; width:85%; height:auto; margin:0 0 1rem; display:block;
+                filter:drop-shadow(0 4px 28px rgba(233,30,140,0.45)) drop-shadow(0 2px 12px rgba(0,0,0,0.6));">
+    <p class="text-muted" style="margin-top:0.25rem; max-width:600px;">Same candy world. 1,000× the madness. Pragmatic Play's high-voltage upgrade delivers 25,000× max win potential and multiplier bombs that go 10× further than the original.</p>
+    <div style="display:flex; gap:0.75rem; margin-top:1.5rem; flex-wrap:wrap;">
+      <a href="/sweet-bonanza-1000/demo/" class="btn-gold">🎮 Play Free Demo</a>
+      <a href="https://roobet.com/?ref=elite" class="btn-outline" target="_blank" rel="noopener">💰 Play Real Money</a>
+      <a href="/sweet-bonanza-1000/review/" class="btn-outline">⭐ Full Review</a>
+    </div>
   </div>
 </div>
 
@@ -179,6 +255,11 @@
   </div>
 
   <div class="sidebar">
+    <div class="card" style="text-align:center; background:linear-gradient(135deg,rgba(233,30,140,0.07),rgba(212,175,55,0.04)); border-color:rgba(233,30,140,0.25);">
+      <img src="/images/sb1000-bomb.png" alt="Sweet Bonanza 1000 — 1000× multiplier bomb" width="480" height="421" class="bomb-sidebar-img">
+      <div style="margin-top:0.75rem; font-size:1.4rem; font-weight:900; color:var(--pink); letter-spacing:-0.01em; text-shadow:0 0 16px rgba(233,30,140,0.5);">1,000×</div>
+      <div style="font-size:0.78rem; color:var(--text-muted); margin-top:0.2rem;">Max multiplier bomb</div>
+    </div>
     <div class="card">
       <h3>SB1000 Quick Facts</h3>
       <table style="width:100%; font-size:0.85rem; border-collapse:collapse;">
