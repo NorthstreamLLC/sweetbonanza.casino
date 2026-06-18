@@ -54,11 +54,13 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;
-  height: 60px;
-  background: rgba(7,7,13,0.95);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  padding: 0 1.75rem;
+  height: 62px;
+  background: rgba(7, 7, 13, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.10);
+  gap: 1rem;
 }
 
 .nav-logo {
@@ -70,24 +72,53 @@ nav {
   color: var(--gold);
   text-decoration: none;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .nav-links a {
   color: var(--text-muted);
-  font-size: 0.85rem;
-  transition: color 0.2s;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 8px;
+  transition: color 0.18s, background 0.18s;
+  white-space: nowrap;
+  text-decoration: none;
 }
-.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.07);
+}
+.nav-links a.active {
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.10);
+}
+
+/* Sweet Bonanza 1000 pill link */
+.nav-links a.nav-sb1000 {
+  color: var(--pink) !important;
+  font-weight: 600;
+  border: 1px solid rgba(233, 30, 140, 0.35);
+  background: rgba(233, 30, 140, 0.06);
+}
+.nav-links a.nav-sb1000:hover {
+  background: rgba(233, 30, 140, 0.15) !important;
+  border-color: var(--pink);
+  color: var(--pink) !important;
+}
 
 .nav-right {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.45rem;
   align-items: center;
   flex-shrink: 0;
 }
@@ -95,38 +126,40 @@ nav {
 .nav-cta {
   background: var(--gold);
   color: #000;
-  padding: 0.35rem 0.85rem;
-  border-radius: 6px;
-  font-size: 0.82rem;
+  padding: 0.38rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
   font-weight: 700;
-  transition: background 0.2s;
+  transition: background 0.18s, transform 0.1s;
   white-space: nowrap;
+  letter-spacing: 0.01em;
 }
-.nav-cta:hover { background: var(--gold-light); color: #000; }
+.nav-cta:hover { background: var(--gold-light); color: #000; transform: translateY(-1px); }
 
 .nav-demo {
-  border: 1.5px solid var(--gold);
+  border: 1.5px solid rgba(212, 175, 55, 0.55);
   color: var(--gold);
-  padding: 0.35rem 0.85rem;
-  border-radius: 6px;
-  font-size: 0.82rem;
+  padding: 0.38rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
   font-weight: 700;
-  transition: all 0.2s;
+  transition: all 0.18s;
   white-space: nowrap;
 }
-.nav-demo:hover { background: var(--gold); color: #000; }
+.nav-demo:hover { background: var(--gold); color: #000; border-color: var(--gold); }
 
 .nav-se {
-  background: #f97316;
-  color: #fff;
-  padding: 0.35rem 0.85rem;
-  border-radius: 6px;
-  font-size: 0.82rem;
+  background: rgba(249, 115, 22, 0.12);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  padding: 0.38rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
   font-weight: 700;
-  transition: background 0.2s;
+  transition: all 0.18s;
   white-space: nowrap;
 }
-.nav-se:hover { background: #ea6a0a; color: #fff; }
+.nav-se:hover { background: #f97316; color: #fff; border-color: #f97316; }
 
 /* ── Layout ── */
 .container {
