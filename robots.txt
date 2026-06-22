@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sweetbonanza.casino/sitemap.xml
+Sitemap: https://www.sweetbonanza.casino/sitemap.xml
